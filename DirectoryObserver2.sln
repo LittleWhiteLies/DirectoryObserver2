@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectoryObserver2", "DirectoryObserver2\DirectoryObserver2.csproj", "{2964DF3A-F28B-4432-B7B6-69F60CDA455D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2964DF3A-F28B-4432-B7B6-69F60CDA455D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2964DF3A-F28B-4432-B7B6-69F60CDA455D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2964DF3A-F28B-4432-B7B6-69F60CDA455D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2964DF3A-F28B-4432-B7B6-69F60CDA455D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C3B65B0-3EC7-4609-A81D-F1A627055134}
+	EndGlobalSection
+EndGlobal
