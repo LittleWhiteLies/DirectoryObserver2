@@ -14,11 +14,12 @@ namespace DirectoryObserver2.Controllers
         }
 
         [HttpGet]
-        public void Observe()
+        public void Observe(string directory)
         {
-            string directory = @"c:/temp";
-            
-            DoWorkAsyncInfiniteLoop(directory, (result) => System.Diagnostics.Trace.WriteLine(result)/*Console.WriteLine(result)*/);
+            //string directory = @"c:/temp";
+
+            //DoWorkAsyncInfiniteLoop(directory, (result) => System.Diagnostics.Trace.WriteLine(result));
+            DoWorkAsyncInfiniteLoop(directory, (result) => Console.WriteLine(result));
 
             return;
         }
@@ -29,6 +30,7 @@ namespace DirectoryObserver2.Controllers
 
             while (true)
             {
+                DateTime nextTimestamp = System.DateTime.Now;
                 DirectoryInfo di = new DirectoryInfo(directoryPath);
                 FileSystemInfo[] files = di.GetFileSystemInfos();
 
@@ -38,23 +40,25 @@ namespace DirectoryObserver2.Controllers
                 {
                     foreach (var file in newFiles)
                     {
-                        callback("fileName: " + file.FullName + ", changeDate: " + file.CreationTime);
+                        callback("fileName: " + file.Name + ", created");
                     }
                 }
 
-                var modifiedFiles = files.Where(f => f.LastWriteTime > timestamp);
+                var modifiedFiles = files.Where(f => f.LastWriteTime > timestamp && f.CreationTime < f.LastWriteTime);
 
                 if (modifiedFiles.Any())
                 {
                     foreach (var file in modifiedFiles)
                     {
-                        callback("fileName: " + file.FullName + ", changeDate: " + file.LastWriteTime);
+                        callback("fileName: " + file.Name + ", changed" );
                     }
                 }
 
-                timestamp = System.DateTime.Now;
+                await Task.Delay(5000);
 
-                await Task.Delay(10000);
+
+                timestamp = nextTimestamp;
+
             };            
         }
     }

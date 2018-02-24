@@ -18,3 +18,4 @@ C:\WGT\Github\DirectoryObserver2\DirectoryObserver2\obj\Debug\netcoreapp2.0\Dire
 C:\WGT\Github\DirectoryObserver2\DirectoryObserver2\obj\Debug\netcoreapp2.0\DirectoryObserver2.AssemblyInfo.cs
 C:\WGT\Github\DirectoryObserver2\DirectoryObserver2\obj\Debug\netcoreapp2.0\DirectoryObserver2.dll
 C:\WGT\Github\DirectoryObserver2\DirectoryObserver2\obj\Debug\netcoreapp2.0\DirectoryObserver2.pdb
+C:\WGT\Github\DirectoryObserver2\DirectoryObserver2\obj\Debug\netcoreapp2.0\DirectoryObserver2.csprojResolveAssemblyReference.cache
