@@ -2,33 +2,37 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace DirectoryObserver2.Controllers
 {
-    [Route("api/Observer")]
     public class ObserverController : Controller
     {
         public ObserverController()
         {
         }
 
+        [Route("api/Observer")]
         [HttpGet]
         public void Observe(string directory)
         {
             //string directory = @"c:/temp";
 
             //DoWorkAsyncInfiniteLoop(directory, (result) => System.Diagnostics.Trace.WriteLine(result));
-            DoWorkAsyncInfiniteLoop(directory, (result) => Console.WriteLine(result));
+
+            CancellationTokenSource cancelationToken = new CancellationTokenSource();
+            
+            DoWorkAsyncInfiniteLoop(directory, cancelationToken, (result) => Console.WriteLine(result));
 
             return;
         }
 
-        public async Task DoWorkAsyncInfiniteLoop(string directoryPath, Action<string> callback)
+        public async Task DoWorkAsyncInfiniteLoop(string directoryPath, CancellationTokenSource cancelationToken, Action<string> callback)
         {
             DateTime timestamp = System.DateTime.Now;
 
-            while (true)
+            while (!cancelationToken.Token.IsCancellationRequested)
             {
                 DateTime nextTimestamp = System.DateTime.Now;
                 DirectoryInfo di = new DirectoryInfo(directoryPath);
@@ -59,7 +63,14 @@ namespace DirectoryObserver2.Controllers
 
                 timestamp = nextTimestamp;
 
-            };            
+            };   
+        }
+
+        [Route("api/StopObservation")]
+        [HttpPost]
+        public void StopObservation(CancellationTokenSource cancelationToken)
+        {
+            cancelationToken.Cancel();
         }
     }
 }
