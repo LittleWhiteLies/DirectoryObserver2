@@ -1,0 +1,11 @@
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\bin\Debug\netcoreapp2.0\ClassLibrary1.deps.json
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\bin\Debug\netcoreapp2.0\ClassLibrary1.runtimeconfig.json
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\bin\Debug\netcoreapp2.0\ClassLibrary1.runtimeconfig.dev.json
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\bin\Debug\netcoreapp2.0\ClassLibrary1.dll
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\bin\Debug\netcoreapp2.0\ClassLibrary1.pdb
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\obj\Debug\netcoreapp2.0\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\obj\Debug\netcoreapp2.0\ClassLibrary1.AssemblyInfoInputs.cache
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\obj\Debug\netcoreapp2.0\ClassLibrary1.AssemblyInfo.cs
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\obj\Debug\netcoreapp2.0\ClassLibrary1.dll
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\obj\Debug\netcoreapp2.0\ClassLibrary1.pdb
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\obj\Debug\netcoreapp2.0\ClassLibrary1.csprojResolveAssemblyReference.cache

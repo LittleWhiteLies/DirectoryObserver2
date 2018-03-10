@@ -6,11 +6,11 @@ C:\WGT\Github\DirectoryObserver2\UnitTestProject\bin\Debug\netcoreapp2.0\UnitTes
 C:\WGT\Github\DirectoryObserver2\UnitTestProject\bin\Debug\netcoreapp2.0\UnitTestProject.runtimeconfig.dev.json
 C:\WGT\Github\DirectoryObserver2\UnitTestProject\bin\Debug\netcoreapp2.0\UnitTestProject.dll
 C:\WGT\Github\DirectoryObserver2\UnitTestProject\bin\Debug\netcoreapp2.0\UnitTestProject.pdb
-C:\WGT\Github\DirectoryObserver2\UnitTestProject\bin\Debug\netcoreapp2.0\DirectoryObserver2.dll
-C:\WGT\Github\DirectoryObserver2\UnitTestProject\bin\Debug\netcoreapp2.0\DirectoryObserver2.pdb
 C:\WGT\Github\DirectoryObserver2\UnitTestProject\obj\Debug\netcoreapp2.0\UnitTestProject.csprojResolveAssemblyReference.cache
 C:\WGT\Github\DirectoryObserver2\UnitTestProject\obj\Debug\netcoreapp2.0\UnitTestProject.csproj.CoreCompileInputs.cache
 C:\WGT\Github\DirectoryObserver2\UnitTestProject\obj\Debug\netcoreapp2.0\UnitTestProject.AssemblyInfoInputs.cache
 C:\WGT\Github\DirectoryObserver2\UnitTestProject\obj\Debug\netcoreapp2.0\UnitTestProject.AssemblyInfo.cs
 C:\WGT\Github\DirectoryObserver2\UnitTestProject\obj\Debug\netcoreapp2.0\UnitTestProject.dll
 C:\WGT\Github\DirectoryObserver2\UnitTestProject\obj\Debug\netcoreapp2.0\UnitTestProject.pdb
+C:\WGT\Github\DirectoryObserver2\UnitTestProject\bin\Debug\netcoreapp2.0\ClassLibrary1.dll
+C:\WGT\Github\DirectoryObserver2\UnitTestProject\bin\Debug\netcoreapp2.0\ClassLibrary1.pdb
