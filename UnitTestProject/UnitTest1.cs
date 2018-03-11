@@ -1,4 +1,4 @@
-using ClassLibrary1;
+using DirectoryObserver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using System.Threading;
@@ -23,7 +23,7 @@ namespace UnitTestProject
             
             Directory.CreateDirectory(directory);
 
-            Class1 clsLib = new Class1();
+            ObserverClass clsLib = new ObserverClass();
 
             CancellationTokenSource cancelationToken = new CancellationTokenSource();
 
@@ -59,7 +59,7 @@ namespace UnitTestProject
                 File.Create(directory + @"/" + fileName);
             }
 
-            Class1 clsLib = new Class1();
+            ObserverClass clsLib = new ObserverClass();
 
             CancellationTokenSource cancelationToken = new CancellationTokenSource();
 
@@ -103,7 +103,7 @@ namespace UnitTestProject
                 File.Create(directory2 + @"/" + fileName).Close();
             }
 
-            Class1 clsLib = new Class1();
+            ObserverClass clsLib = new ObserverClass();
             var result = "";
             
             CancellationTokenSource cancelationToken = new CancellationTokenSource();

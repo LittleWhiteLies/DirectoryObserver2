@@ -1591,7 +1591,7 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "ClassLibrary1/1.0.0": {
+      "DirectoryObserver/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
@@ -1599,10 +1599,10 @@
           "Microsoft.NETCore.App": "2.0.0"
         },
         "compile": {
-          "bin/placeholder/ClassLibrary1.dll": {}
+          "bin/placeholder/DirectoryObserver.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ClassLibrary1.dll": {}
+          "bin/placeholder/DirectoryObserver.dll": {}
         }
       }
     }
@@ -5519,15 +5519,15 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "ClassLibrary1/1.0.0": {
+    "DirectoryObserver/1.0.0": {
       "type": "project",
-      "path": "../ClassLibrary1/ClassLibrary1.csproj",
-      "msbuildProject": "../ClassLibrary1/ClassLibrary1.csproj"
+      "path": "../ClassLibrary1/DirectoryObserver.csproj",
+      "msbuildProject": "../ClassLibrary1/DirectoryObserver.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "ClassLibrary1 >= 1.0.0",
+      "DirectoryObserver >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 15.6.1",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
@@ -5565,8 +5565,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\WGT\\Github\\DirectoryObserver2\\ClassLibrary1\\ClassLibrary1.csproj": {
-              "projectPath": "C:\\WGT\\Github\\DirectoryObserver2\\ClassLibrary1\\ClassLibrary1.csproj"
+            "C:\\WGT\\Github\\DirectoryObserver2\\ClassLibrary1\\DirectoryObserver.csproj": {
+              "projectPath": "C:\\WGT\\Github\\DirectoryObserver2\\ClassLibrary1\\DirectoryObserver.csproj"
             }
           }
         }

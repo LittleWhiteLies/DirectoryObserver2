@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v2.0": {
       "UnitTestProject/1.0.0": {
         "dependencies": {
-          "ClassLibrary1": "1.0.0",
+          "DirectoryObserver": "1.0.0",
           "MSTest.TestAdapter": "1.2.0",
           "MSTest.TestFramework": "1.2.0",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.0.2",
@@ -1391,12 +1391,12 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "ClassLibrary1/1.0.0": {
+      "DirectoryObserver/1.0.0": {
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "15.6.1"
         },
         "runtime": {
-          "ClassLibrary1.dll": {}
+          "DirectoryObserver.dll": {}
         }
       }
     }
@@ -2247,7 +2247,7 @@
       "path": "system.xml.xpath.xmldocument/4.0.1",
       "hashPath": "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
     },
-    "ClassLibrary1/1.0.0": {
+    "DirectoryObserver/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

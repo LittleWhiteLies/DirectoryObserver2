@@ -1,0 +1,11 @@
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\bin\Release\netcoreapp2.0\DirectoryObserver.deps.json
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\bin\Release\netcoreapp2.0\DirectoryObserver.runtimeconfig.json
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\bin\Release\netcoreapp2.0\DirectoryObserver.runtimeconfig.dev.json
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\bin\Release\netcoreapp2.0\DirectoryObserver.dll
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\bin\Release\netcoreapp2.0\DirectoryObserver.pdb
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\obj\Release\netcoreapp2.0\DirectoryObserver.csprojResolveAssemblyReference.cache
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\obj\Release\netcoreapp2.0\DirectoryObserver.csproj.CoreCompileInputs.cache
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\obj\Release\netcoreapp2.0\DirectoryObserver.AssemblyInfoInputs.cache
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\obj\Release\netcoreapp2.0\DirectoryObserver.AssemblyInfo.cs
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\obj\Release\netcoreapp2.0\DirectoryObserver.dll
+C:\WGT\Github\DirectoryObserver2\ClassLibrary1\obj\Release\netcoreapp2.0\DirectoryObserver.pdb

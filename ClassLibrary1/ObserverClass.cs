@@ -5,20 +5,20 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1
+namespace DirectoryObserver
 {
-    public class Class1
+    public class ObserverClass
     {
         public Dictionary<string, CancellationTokenSource> cancelationTokens = new Dictionary<string, CancellationTokenSource>();
 
-        public void Observe(string directory)
+        public void Observe(string directory, Action<string> callback)
         {
             CancellationTokenSource cancelationToken = new CancellationTokenSource();
 
             cancelationTokens.Add(directory, cancelationToken);
             //DoWorkAsyncInfiniteLoop(directory, cancelationToken, (result) => System.Diagnostics.Trace.WriteLine(result));
 
-            DoWorkAsyncInfiniteLoop(directory, cancelationToken, (result) => Console.WriteLine(result));
+            DoWorkAsyncInfiniteLoop(directory, cancelationToken, callback);
             
             return;
         }
@@ -53,7 +53,7 @@ namespace ClassLibrary1
                     }
                 }
 
-                await Task.Delay(5000);
+                await Task.Delay(1);
                 
                 timestamp = nextTimestamp;
             };

@@ -5522,9 +5522,9 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\WGT\\Github\\DirectoryObserver2\\ClassLibrary1\\ClassLibrary1.csproj",
-      "projectName": "ClassLibrary1",
-      "projectPath": "C:\\WGT\\Github\\DirectoryObserver2\\ClassLibrary1\\ClassLibrary1.csproj",
+      "projectUniqueName": "C:\\WGT\\Github\\DirectoryObserver2\\ClassLibrary1\\DirectoryObserver.csproj",
+      "projectName": "DirectoryObserver",
+      "projectPath": "C:\\WGT\\Github\\DirectoryObserver2\\ClassLibrary1\\DirectoryObserver.csproj",
       "packagesPath": "C:\\Users\\astaa\\.nuget\\packages\\",
       "outputPath": "C:\\WGT\\Github\\DirectoryObserver2\\ClassLibrary1\\obj\\",
       "projectStyle": "PackageReference",

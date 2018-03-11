@@ -1,0 +1,13 @@
+C:\WGT\Github\DirectoryObserver2\ConsoleApp\bin\Release\netcoreapp2.0\ConsoleApp.deps.json
+C:\WGT\Github\DirectoryObserver2\ConsoleApp\bin\Release\netcoreapp2.0\ConsoleApp.runtimeconfig.json
+C:\WGT\Github\DirectoryObserver2\ConsoleApp\bin\Release\netcoreapp2.0\ConsoleApp.runtimeconfig.dev.json
+C:\WGT\Github\DirectoryObserver2\ConsoleApp\bin\Release\netcoreapp2.0\ConsoleApp.dll
+C:\WGT\Github\DirectoryObserver2\ConsoleApp\bin\Release\netcoreapp2.0\ConsoleApp.pdb
+C:\WGT\Github\DirectoryObserver2\ConsoleApp\bin\Release\netcoreapp2.0\DirectoryObserver.dll
+C:\WGT\Github\DirectoryObserver2\ConsoleApp\bin\Release\netcoreapp2.0\DirectoryObserver.pdb
+C:\WGT\Github\DirectoryObserver2\ConsoleApp\obj\Release\netcoreapp2.0\ConsoleApp.csproj.CoreCompileInputs.cache
+C:\WGT\Github\DirectoryObserver2\ConsoleApp\obj\Release\netcoreapp2.0\ConsoleApp.AssemblyInfoInputs.cache
+C:\WGT\Github\DirectoryObserver2\ConsoleApp\obj\Release\netcoreapp2.0\ConsoleApp.AssemblyInfo.cs
+C:\WGT\Github\DirectoryObserver2\ConsoleApp\obj\Release\netcoreapp2.0\ConsoleApp.dll
+C:\WGT\Github\DirectoryObserver2\ConsoleApp\obj\Release\netcoreapp2.0\ConsoleApp.pdb
+C:\WGT\Github\DirectoryObserver2\ConsoleApp\obj\Release\netcoreapp2.0\ConsoleApp.csprojResolveAssemblyReference.cache

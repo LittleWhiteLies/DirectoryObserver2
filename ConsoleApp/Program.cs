@@ -1,39 +1,40 @@
-﻿using ClassLibrary1;
-using System.Threading;
+﻿using DirectoryObserver;
+using System;
 
 namespace ConsoleApp
 {
     public class Program
     {
-        static Class1 clsLib = new Class1();
         
         public static void Main(string[] args)
         {
-            ObserveDirectory(@"c:/temp");
+            ObserverClass clsLib = new ObserverClass();
+            
+            string cmd = null;
+            string directoryPath = null;
 
-            Thread.Sleep(10000);
-
-            ObserveDirectory(@"c:/temp2");
-
-            Thread.Sleep(20000);
-
-            StopObservingDirectory("c:/temp2");
-
-            Thread.Sleep(20000);
-
-            StopObservingDirectory("c:/temp");
-
-            Thread.Sleep(20000);
-        }
-
-        private static void ObserveDirectory(string directory)
-        {
-            clsLib.Observe(directory);
-        }
-
-        private static void StopObservingDirectory(string directory)
-        {
-            clsLib.StopObservation(directory);            
+            while (true)
+            {
+                Console.WriteLine(@"Please enter command ('start' or 'stop'): ");
+                cmd = Console.ReadLine().Trim();
+                Console.WriteLine(@"Please enter directory: ");
+                directoryPath = Console.ReadLine().Trim();
+                
+                if (cmd == "start")
+                {
+                    Console.WriteLine("Starting " + directoryPath + " observation...");
+                    clsLib.Observe(directoryPath, (result) => Console.WriteLine(result));
+                }
+                else if (cmd == "stop")
+                {
+                    clsLib.StopObservation(directoryPath);
+                    Console.WriteLine("... directory " + directoryPath + " observation is stoped");
+                }
+                else
+                {
+                    Console.WriteLine("Unknown command: " + cmd);
+                }
+            }
         }
     }
 }
