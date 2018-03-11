@@ -24,10 +24,8 @@ namespace UnitTestProject
             Directory.CreateDirectory(directory);
 
             ObserverClass clsLib = new ObserverClass();
-
-            CancellationTokenSource cancelationToken = new CancellationTokenSource();
-
-            clsLib.DoWorkAsyncInfiniteLoop(directory, cancelationToken, (clbkResult) => result = clbkResult);
+            
+            clsLib.Observe(directory, (clbkResult) => result = clbkResult);
 
             Thread.Sleep(5000);
 
@@ -61,13 +59,10 @@ namespace UnitTestProject
 
             ObserverClass clsLib = new ObserverClass();
 
-            CancellationTokenSource cancelationToken = new CancellationTokenSource();
-
-            clsLib.DoWorkAsyncInfiniteLoop(directory, cancelationToken, (clbkResult) => result = clbkResult);
+            clsLib.Observe(directory, (clbkResult) => result = clbkResult);
 
             Thread.Sleep(5000);
-
-            //File.WriteAllText(directory + @"/" + fileName, "This is test");
+            
             File.CreateText(directory + @"/" + fileName);
 
             expectedResult = @"directory: " + directory + ", fileName: " + fileName + ", changed";
@@ -80,7 +75,7 @@ namespace UnitTestProject
             Assert.AreEqual(result, expectedResult);
         }
         
-        [TestMethod]
+        /*[TestMethod]
         public void ShouldTerminateOneOfTheRunningThreads()
         {
             string directory1 = @"C:/temp";
@@ -137,6 +132,6 @@ namespace UnitTestProject
 
             Assert.AreNotEqual(tsk1.Status, System.Threading.Tasks.TaskStatus.RanToCompletion);
             Assert.AreEqual(tsk2.Status, System.Threading.Tasks.TaskStatus.RanToCompletion);
-        }
+        }*/
     }
 }

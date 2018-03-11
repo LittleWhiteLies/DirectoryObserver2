@@ -9,7 +9,7 @@ namespace DirectoryObserver
 {
     public class ObserverClass
     {
-        public Dictionary<string, CancellationTokenSource> cancelationTokens = new Dictionary<string, CancellationTokenSource>();
+        private Dictionary<string, CancellationTokenSource> cancelationTokens = new Dictionary<string, CancellationTokenSource>();
 
         public void Observe(string directory, Action<string> callback)
         {
@@ -23,7 +23,7 @@ namespace DirectoryObserver
             return;
         }
 
-        public async Task DoWorkAsyncInfiniteLoop(string directoryPath, CancellationTokenSource cancelationToken, Action<string> callback)
+        private async Task DoWorkAsyncInfiniteLoop(string directoryPath, CancellationTokenSource cancelationToken, Action<string> callback)
         {
             DateTime timestamp = System.DateTime.Now;
 
