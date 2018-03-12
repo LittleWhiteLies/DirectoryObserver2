@@ -12,6 +12,7 @@ namespace ConsoleApp
             
             string cmd = null;
             string directoryPath = null;
+            int frequency = 1000; //ms
 
             while (true)
             {
@@ -23,7 +24,7 @@ namespace ConsoleApp
                 if (cmd == "start")
                 {
                     Console.WriteLine("Starting " + directoryPath + " observation...");
-                    clsLib.Observe(directoryPath, (result) => Console.WriteLine(result));
+                    clsLib.Observe(directoryPath, frequency, (result) => Console.WriteLine(result));
                 }
                 else if (cmd == "stop")
                 {

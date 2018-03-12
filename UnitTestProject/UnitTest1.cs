@@ -11,6 +11,7 @@ namespace UnitTestProject
         [TestMethod]
         public void ShouldDetectCreatedFile()
         {
+            int frequency = 1000;
             string directory = @"C:/temp4";
             string fileName = @"unitTestFile.txt";
             string result = null;
@@ -25,10 +26,8 @@ namespace UnitTestProject
 
             ObserverClass clsLib = new ObserverClass();
             
-            clsLib.Observe(directory, (clbkResult) => result = clbkResult);
-
-            Thread.Sleep(5000);
-
+            clsLib.Observe(directory, frequency, (clbkResult) => result = clbkResult);
+            
             File.Create(directory + @"/" + fileName);
                         
             expectedResult = @"directory: " + directory + ", fileName: " + fileName + ", created";
@@ -44,6 +43,7 @@ namespace UnitTestProject
         [TestMethod]
         public void ShouldDetectChangedFile()
         {
+            int frequency = 1000;
             string directory = @"C:/temp3";
             string fileName = @"unitTestFile.txt";
             string result = null;
@@ -59,9 +59,7 @@ namespace UnitTestProject
 
             ObserverClass clsLib = new ObserverClass();
 
-            clsLib.Observe(directory, (clbkResult) => result = clbkResult);
-
-            Thread.Sleep(5000);
+            clsLib.Observe(directory, frequency, (clbkResult) => result = clbkResult);
             
             File.CreateText(directory + @"/" + fileName);
 
@@ -75,13 +73,17 @@ namespace UnitTestProject
             Assert.AreEqual(result, expectedResult);
         }
         
-        /*[TestMethod]
+        [TestMethod]
         public void ShouldTerminateOneOfTheRunningThreads()
         {
+            int frequency = 1000;
             string directory1 = @"C:/temp";
-            string fileName = @"unitTestFile.txt";
             string directory2 = @"C:/temp2";
-            
+            string fileName = @"unitTestFile.txt";
+            string result = null;
+            string expectedDir1Result = @"directory: " + directory1 + ", fileName: " + fileName + ", changed"; ;
+            string expectedDir2Result = @"directory: " + directory2 + ", fileName: " + fileName + ", changed"; ;
+
             if (!(File.Exists(directory1 + @"/" + fileName)))
             {
                 if (!Directory.Exists(directory1))
@@ -99,39 +101,46 @@ namespace UnitTestProject
             }
 
             ObserverClass clsLib = new ObserverClass();
-            var result = "";
             
-            CancellationTokenSource cancelationToken = new CancellationTokenSource();
-
-            clsLib.cancelationTokens.Add(directory1, cancelationToken);
-
-            var tsk1 = clsLib.DoWorkAsyncInfiniteLoop(directory1, cancelationToken, (clbkResult) => result = clbkResult);
-
-            Thread.Sleep(1000);
+            clsLib.Observe(directory1, frequency, (clbkResult) => result = clbkResult);
             
-            Assert.AreNotEqual(tsk1.Status, System.Threading.Tasks.TaskStatus.RanToCompletion);
-
-            CancellationTokenSource cancelationToken2 = new CancellationTokenSource();
-
-            clsLib.cancelationTokens.Add(directory2, cancelationToken2);
-
-            var tsk2 = clsLib.DoWorkAsyncInfiniteLoop(directory2, cancelationToken2, (clbkResult) => result = clbkResult);
-
-            Thread.Sleep(1000);
-
-            Assert.AreNotEqual(tsk1.Status, System.Threading.Tasks.TaskStatus.RanToCompletion);
-            Assert.AreNotEqual(tsk2.Status, System.Threading.Tasks.TaskStatus.RanToCompletion);
+            File.CreateText(directory1 + @"/" + fileName).Close();
             
-            File.CreateText(directory2 + @"/" + fileName);
+            while (result == null)
+            {
+                Thread.Sleep(1000);
+            }
 
-            File.CreateText(directory1 + @"/" + fileName);
+            Assert.AreEqual(result, expectedDir1Result);
 
+            result = null;
+            
+            clsLib.Observe(directory2, frequency, (clbkResult) => result = clbkResult);
+            
+            File.CreateText(directory2 + @"/" + fileName).Close();
+            
+            while (result == null)
+            {
+                Thread.Sleep(1000);
+            }
+
+            Assert.AreEqual(result, expectedDir2Result);
+
+            result = null;
+            
             clsLib.StopObservation(directory2);
 
-            Thread.Sleep(5000);
+            File.CreateText(directory2 + @"/" + fileName).Close();
+            
+            File.CreateText(directory1 + @"/" + fileName).Close();
 
-            Assert.AreNotEqual(tsk1.Status, System.Threading.Tasks.TaskStatus.RanToCompletion);
-            Assert.AreEqual(tsk2.Status, System.Threading.Tasks.TaskStatus.RanToCompletion);
-        }*/
+            while (result == null)
+            {
+                Thread.Sleep(1000);
+            }
+
+            Assert.AreEqual(result, expectedDir1Result);
+            Assert.AreNotEqual(result, expectedDir2Result);
+        }
     }
 }

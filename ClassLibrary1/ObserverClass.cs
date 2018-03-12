@@ -11,19 +11,19 @@ namespace DirectoryObserver
     {
         private Dictionary<string, CancellationTokenSource> cancelationTokens = new Dictionary<string, CancellationTokenSource>();
 
-        public void Observe(string directory, Action<string> callback)
+        public void Observe(string directory, int frequency, Action<string> callback)
         {
             CancellationTokenSource cancelationToken = new CancellationTokenSource();
 
             cancelationTokens.Add(directory, cancelationToken);
             //DoWorkAsyncInfiniteLoop(directory, cancelationToken, (result) => System.Diagnostics.Trace.WriteLine(result));
 
-            DoWorkAsyncInfiniteLoop(directory, cancelationToken, callback);
+            DoWorkAsyncInfiniteLoop(directory, frequency, cancelationToken, callback);
             
             return;
         }
 
-        private async Task DoWorkAsyncInfiniteLoop(string directoryPath, CancellationTokenSource cancelationToken, Action<string> callback)
+        private async Task DoWorkAsyncInfiniteLoop(string directoryPath, int frequency, CancellationTokenSource cancelationToken, Action<string> callback)
         {
             DateTime timestamp = System.DateTime.Now;
 
@@ -53,7 +53,7 @@ namespace DirectoryObserver
                     }
                 }
 
-                await Task.Delay(1);
+                await Task.Delay(frequency);
                 
                 timestamp = nextTimestamp;
             };
