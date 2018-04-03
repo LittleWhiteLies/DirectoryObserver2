@@ -24,10 +24,12 @@ namespace UnitTestProject
             
             Directory.CreateDirectory(directory);
 
-            ObserverClass clsLib = new ObserverClass();
-            
-            clsLib.Observe(directory, frequency, (clbkResult) => result = clbkResult);
-            
+            //ObserverClass clsLib = new ObserverClass();
+            ObserverClass2 clsLib = new ObserverClass2();
+
+            //clsLib.Observe(directory, frequency, (clbkResult) => result = clbkResult);
+            clsLib.StartObserveDirectory(directory, frequency, (clbkResult) => result = clbkResult);
+
             File.Create(directory + @"/" + fileName);
                         
             expectedResult = @"directory: " + directory + ", fileName: " + fileName + ", created";
@@ -57,9 +59,10 @@ namespace UnitTestProject
                 File.Create(directory + @"/" + fileName);
             }
 
-            ObserverClass clsLib = new ObserverClass();
+            //ObserverClass clsLib = new ObserverClass();
+            ObserverClass2 clsLib = new ObserverClass2();
 
-            clsLib.Observe(directory, frequency, (clbkResult) => result = clbkResult);
+            clsLib.StartObserveDirectory(directory, frequency, (clbkResult) => result = clbkResult);
             
             File.CreateText(directory + @"/" + fileName);
 
@@ -100,9 +103,9 @@ namespace UnitTestProject
                 File.Create(directory2 + @"/" + fileName).Close();
             }
 
-            ObserverClass clsLib = new ObserverClass();
+            ObserverClass2 clsLib = new ObserverClass2();
             
-            clsLib.Observe(directory1, frequency, (clbkResult) => result = clbkResult);
+            clsLib.StartObserveDirectory(directory1, frequency, (clbkResult) => result = clbkResult);
             
             File.CreateText(directory1 + @"/" + fileName).Close();
             
@@ -115,7 +118,7 @@ namespace UnitTestProject
 
             result = null;
             
-            clsLib.Observe(directory2, frequency, (clbkResult) => result = clbkResult);
+            clsLib.StartObserveDirectory(directory2, frequency, (clbkResult) => result = clbkResult);
             
             File.CreateText(directory2 + @"/" + fileName).Close();
             
@@ -128,7 +131,7 @@ namespace UnitTestProject
 
             result = null;
             
-            clsLib.StopObservation(directory2);
+            clsLib.StopObserveDirectory(directory2);
 
             File.CreateText(directory2 + @"/" + fileName).Close();
             
@@ -141,6 +144,8 @@ namespace UnitTestProject
 
             Assert.AreEqual(result, expectedDir1Result);
             Assert.AreNotEqual(result, expectedDir2Result);
+
+            clsLib.StopObserveDirectory(directory1);
         }
     }
 }
