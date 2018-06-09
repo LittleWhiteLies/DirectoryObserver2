@@ -4,13 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-
 namespace DirectoryObserver
 {
     public class ObserverClass2
     {
         List<Directory> observableDirectories = new List<Directory>();
-        string _observerStatus = "stopped";
+        private bool _isObserverRunning = false;
 
         public void StartObserveDirectory(string directoryPath, int checkFreq, Action<string> callback)
         {
@@ -20,9 +19,11 @@ namespace DirectoryObserver
                                                         checkFrequesy = checkFreq,
                                                         callback = callback });
 
-            if (_observerStatus != "started")
+            if (_isObserverRunning != true)
             {
-                StartObservation();
+                Task.Run(() => {
+                    StartObservation();
+                });
             }
         }
 
@@ -33,22 +34,22 @@ namespace DirectoryObserver
 
         public async Task StartObservation()
         {
+            _isObserverRunning = true;
 
-            while(observableDirectories.Count > 0)
+            while (observableDirectories.Count > 0)
             {
-                _observerStatus = "started";
+                List<Directory> directories = new List<Directory>();
+                directories.AddRange(observableDirectories);
 
                 //get all directories to observe
-                foreach( var dir in observableDirectories.FindAll(q => q.lastCheckTime.AddMilliseconds(q.checkFrequesy) <= DateTime.Now))
+                foreach ( var dir in directories.FindAll(q => q.lastCheckTime.AddMilliseconds(q.checkFrequesy) <= DateTime.Now))
                 {
                     //start tasks to observe directory
                     CheckDirectory(dir.directoryPath, dir.lastCheckTime, dir.callback);
                 }
-
-                await Task.Delay(1);
             }
 
-            _observerStatus = "stopped";
+            _isObserverRunning = false;
         }
 
         private async Task CheckDirectory(string directoryPath, DateTime lastCheckTime, Action<string> callback)
